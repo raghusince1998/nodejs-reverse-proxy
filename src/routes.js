@@ -5,7 +5,7 @@ module.exports = {
         {
             location: '/eumcollector/',
             target: 'http://sin-col.eum-appdynamics.com:7001',
-            access_log: '/logs/eumcollector/access.log',
+            access_log: '/logs/proxy.asia.essilor.group/eumcollector/access.log',
         },
         // 🔹 Crimson
         {
@@ -23,14 +23,14 @@ module.exports = {
         {
             location: '/indigo/',
             target: `http://${process.env.INDIGO_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/indigo/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/indigo/access.log',
         },
 
         // 🔹 Mandrake (uses HTTPS)
         {
             location: '/mandrake/',
             target: `https://${process.env.MANDRAKE_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/mandrake/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/mandrake/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -43,7 +43,7 @@ module.exports = {
         {
             location: '/orion/',
             target: `http://${process.env.ORION_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/orion/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/orion/access.log',
             request_headers: {
                 'Host': 'oris-qa-agw-sea-farm01-001.asia.essilor.group'
             }
@@ -53,14 +53,14 @@ module.exports = {
         {
             location: '/weld/',
             target: `http://${process.env.WELD_SERVER}`,
-            access_log: '/logs/weld/access.log',
+            access_log: '/logs/proxy.asia.essilor.group/weld/access.log',
         },
 
         // 🔹 Hercules
         {
             location: '/hercules/',
             target: `http://${process.env.HERCULES_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/hercules/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/hercules/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -74,7 +74,7 @@ module.exports = {
         {
             location: '/vega/',
             target: `https://${process.env.VEGA_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/vega/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/vega/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -85,7 +85,7 @@ module.exports = {
         {
             location: '/api/v2/auth-context',
             target: 'https://iam-server-ig-qa.asia.essilor.group:9032/iam-server-ig/api/v2/auth-context/',
-            access_log: 'logs/rainbow-client-qa/auth-context/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/auth-context/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -96,7 +96,7 @@ module.exports = {
         {
             location: '/clapton/',
             target: `https://${process.env.CLAPTON_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/clapton/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/clapton/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -105,7 +105,7 @@ module.exports = {
         {
             location: '/butterfly/',
             target: `https://${process.env.BUTTERFLY_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/butterfly/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/butterfly/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -116,7 +116,7 @@ module.exports = {
         {
             location: '/encore-erp/',
             target: `https://${process.env.ENCOREERP_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/encore-erp/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/encore-erp/access.log',
 
         },
 
@@ -124,7 +124,7 @@ module.exports = {
         {
             location: '/gojira/',
             target: `http://${process.env.GOJIRA_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/gojira/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/gojira/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -135,7 +135,7 @@ module.exports = {
         {
             location: '/encore-arcade/',
             target: `https://${process.env.ENCORE_ARCADE_SERVER}/iam-server-ig`,
-            access_log: '/logs/encore-arcade/access.log',
+            access_log: '/logs/proxy.asia.essilor.group/encore-arcade/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -146,7 +146,7 @@ module.exports = {
         {
             location: '/encore-order-flow/',
             target: `https://${process.env.ENCORE_ORDER_FLOW_SERVER}/iam-server-ig`,
-            access_log: '/logs/encore-order-flow/access.log',
+            access_log: '/logs/proxy.asia.essilor.group/encore-order-flow/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -177,7 +177,7 @@ module.exports = {
         {
             location: '/purge/camelot/',
             target: `https://${process.env.CAMELOT_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/camelot/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/camelot/access.log',
             auth_basic: "Administrator Login",
             auth_basic_user_file: '/etc/nginx/.refine',
             proxy_cache_key: '$purge_key',
@@ -190,7 +190,7 @@ module.exports = {
         {
             location: '/genesis/',
             target: `https://${process.env.GENESIS_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/genesis/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/genesis/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -201,7 +201,7 @@ module.exports = {
         {
             location: '/multipair/',
             target: `https://${process.env.MULTIPAIR_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/falcon-multipair/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/falcon-multipair/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -210,7 +210,7 @@ module.exports = {
         {
             location: '/falcon-authoring/',
             target: `https://${process.env.FALCON_AUTHORING_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/falcon-authoring/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/falcon-authoring/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -219,7 +219,7 @@ module.exports = {
         {
             location: '/falcon-nplusm-engine/',
             target: `https://${process.env.FALCON_NPLUSM_ENGINE_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/falcon-nplusm-engine/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/falcon-nplusm-engine/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -230,7 +230,7 @@ module.exports = {
         {
             location: '/pecos-orchestrator/',
             target: `http://${process.env.PECOS_ORCHESTRATOR_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/pecos-orchestrator/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/pecos-orchestrator/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -241,28 +241,28 @@ module.exports = {
         {
             location: '/b2brewards-server/',
             target: `https://${process.env.B2BREWARDS_SERVER}`,
-            access_log: 'logs/b2brewards-server/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/b2brewards-server/access.log',
         },
 
         // 🔹 Lothar
         {
             location: '/lothar/',
             target: `http://${process.env.LOTHAR_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/lothar/access.log'
+            access_log: 'logs/proxy.asia.essilor.group/lothar/access.log'
         },
 
         // 🔹 Getsinglefileperitem
         {
             location: '/Getsinglefileperitem/',
             target: `https://${process.env.GETSINGLEFILEPERITEM_SERVER}`,
-            access_log: 'logs/Getsinglefileperitem/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/Getsinglefileperitem/access.log',
         },
 
         // 🔹 IAM
         {
             location: '/iam-server/',
             target: `http://${process.env.IAM_SERVER}`,
-            access_log: 'logs/rainbow-client-qa/iam-server/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/iam-server/access.log',
             cache: true,
             cache_ttl: 3600,
             request_headers: {
@@ -278,7 +278,7 @@ module.exports = {
         {
             location: '/first-sight/',
             target: `https://${process.env.FIRST_SIGHT_SERVER}/iam-server-ig`,
-            access_log: 'logs/rainbow-client-qa/first-sight/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/first-sight/access.log',
             request_headers: {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
@@ -289,7 +289,7 @@ module.exports = {
         {
             location: '/',
             target: 'file:///data1/nginx/html/rainbow-client/',
-            access_log: 'logs/rainbow-client-qa/access.log',
+            access_log: 'logs/proxy.asia.essilor.group/access.log',
             response_headers: {
                 'Cache-Control': 'no-cache',
                 'X-Powered-By': 'CustomProxy'
