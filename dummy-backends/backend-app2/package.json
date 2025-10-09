@@ -1,0 +1,17 @@
+{
+  "name": "backend-app2",
+  "version": "1.0.0",
+  "description": "dummy backend app 2",
+  "license": "ISC",
+  "author": "rsolanki@okruti.com",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
