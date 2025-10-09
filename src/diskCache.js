@@ -11,7 +11,7 @@ const diskCache = cacheManager.caching({
     store: fsStore,
     options: {
         path: diskCachePath,
-        ttl: 300,
+        ttl: 300, // 300seconds = 5minutes
         subdirs: true,
         zip: false
     }

@@ -112,7 +112,7 @@ function buildCacheKey(req) {
         }
 
         // --- CLIENT MAX BODY SIZE CHECK ---
-        const maxBodySize = matchedRule.maxBodySize || 5 * 1024 * 1024; // default 5MB
+        const maxBodySize = (matchedRule.maxBodySize || 5) * 1024 * 1024; // default 5MB
         const contentLength = parseInt(req.headers['content-length'] || '0');
         if (contentLength > maxBodySize) {
             res.writeHead(413, { 'Content-Type': 'text/plain' });
@@ -179,8 +179,8 @@ function buildCacheKey(req) {
             changeOrigin: true,
             agent,
             headers,
-            timeout: connectTimeout || 30000,      // equivalent to proxy_connect_timeout
-            proxyTimeout: proxyTimeout || 30000    // equivalent to proxy_read_timeout
+            timeout: (connectTimeout || 30) * 1000,      // equivalent to proxy_connect_timeout in seconds
+            proxyTimeout: (proxyTimeout || 30) * 1000    // equivalent to proxy_read_timeout in seconds
         };
 
         proxy.web(req, res, proxyOptions, (err) => {

@@ -35,8 +35,8 @@ module.exports = {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
             },
-            proxyTimeout: 12000000, // this is proxy read timeout in ms 1200s
-            maxBodySize: 50 * 1024 * 1024, // 50MB
+            proxyTimeout: 1200, // this is proxy read timeout in seconds 1200s
+            maxBodySize: 50 // 50MB
         },
 
         // 🔹 Orion
@@ -65,9 +65,9 @@ module.exports = {
                 'X-Forwarded-For': '$remote_addr',
                 'Host': '$host'
             },
-            proxyTimeout: 30000, // this is proxy read timeout in ms
-            connectTimeout: 30000, // this is proxy connect timeout in ms
-            sendTimeout: 30000, // this is proxy send timeout in ms
+            proxyTimeout: 30, // this is proxy read timeout in seconds
+            connectTimeout: 30, // this is proxy connect timeout in seconds
+            sendTimeout: 30, // this is proxy send timeout in seconds
         },
 
         // 🔹 Vega
@@ -159,7 +159,7 @@ module.exports = {
             target: `https://${process.env.CAMELOT_SERVER}`,
             access_log: 'logs/proxy.asia.essilor.group/camelot/access.log',
             cache: true,
-            cache_ttl: 3600,
+            cache_ttl: 3600, // this is in seconds (1 hour)
             request_headers: {
                 'x-branch': 'encore',
                 'x-tid': '$request_id',
