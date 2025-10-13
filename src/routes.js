@@ -4,7 +4,7 @@ const commonHeaders = {
     'x-branch': 'encore',
     'x-tid': '$request_id',
     'X-appname': 'rainbow-client',
-    'x-ESS-Environment': 'QA'
+    'x-ESS-Environment': 'QA',
 }
 
 module.exports = {
@@ -182,7 +182,7 @@ module.exports = {
             target: `https://${process.env.CAMELOT_SERVER}`,
             access_log: 'logs/proxy.asia.essilor.group/camelot/access.log',
             cache: true,
-            cache_ttl: 3600, // this is in seconds (1 hour)
+            cache_ttl: 129600, // this is in seconds (36 hour)
             request_headers: {
                 ...commonHeaders,
                 'X-Cache-Bypass': 1,

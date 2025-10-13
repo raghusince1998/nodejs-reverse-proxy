@@ -23,7 +23,7 @@ function createLogger(logFilePath) {
             new winston.transports.DailyRotateFile({
                 filename: logFilePath.replace(/\.log$/, '') + '-%DATE%.log',
                 datePattern: 'YYYY-MM-DD',
-                maxFiles: '14d',
+                maxFiles: '7d',
                 zippedArchive: true
             })
         ]
