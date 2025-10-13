@@ -249,7 +249,7 @@ function buildCacheKey(req) {
                     const cacheKey = buildCacheKey(req);
                     const cache_ttl = matchedRule.cache_ttl || 300;
                     try {
-                        await diskCache.set(cacheKey, { headers: proxyRes.headers, body, cache_ttl });
+                        await diskCache.set(cacheKey, { headers: proxyRes.headers, body, cache_ttl }, cache_ttl);
                         console.log(`[CACHE SET] ${ cacheKey}, size: ${body.length}`);
                     } catch (err) {
                         console.error(`[CACHE WRITE ERROR] ${cacheKey}: ${err.message}`);

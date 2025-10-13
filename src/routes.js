@@ -325,7 +325,7 @@ module.exports = {
             target: 'http://localhost:3002',
             access_log: 'logs/app.example.com/api/access.log',
             cache: true,
-            cache_ttl: 120,
+            cache_ttl: 129600, // this is in seconds (36 hour)
         },
         {
             location: '/',
@@ -340,7 +340,7 @@ module.exports = {
                 'Cache-Control': 'no-store'
             },
             cache: true,
-            cache_ttl: 120,
+            cache_ttl: 129600, // this is in seconds (36 hour)
         }
     ],
     'api.example.com': [  // this is host
@@ -360,7 +360,7 @@ module.exports = {
                 'Test_set_header': 'test_set_header'
             },
             cache: true,
-            cache_ttl: 120, // seconds
+            cache_ttl: 129600, // this is in seconds (36 hour)
         },
         {
             location: '/',
@@ -375,8 +375,8 @@ module.exports = {
                 'Cache-Control': 'no-store'
             },
             cache: true,
-            cache_ttl: 120, // seconds
-        }
+            cache_ttl: 129600, // this is in seconds (36 hour)
+               }
     ],
     'default': [
         {
