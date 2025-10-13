@@ -59,7 +59,7 @@ function buildCacheKey(req) {
     const normalizedUrl = `${pathname}${query}`;
     const hashedKey = hashKey(normalizedUrl);
     console.log(`[CACHE KEY] Raw URL: ${req.url} | Normalized: ${normalizedUrl} | Key: ${hostname}::${hashedKey}`);
-    return `${hostname}::${hashedKey}`;
+    return `${hostname}::${req.url}::${hashedKey}`;
 }
 
 (async () => {
@@ -158,11 +158,11 @@ function buildCacheKey(req) {
 
         // Handle GET cache logic
         const cacheKey = buildCacheKey(req); // safe cache key
-        const cacheEnabled = cache && req.method === 'GET' && !request_headers['x-cache-bypass'];
+        const cacheEnabled = cache && req.method === 'GET' && !(request_headers?.['x-cache-bypass']);
 
         if (cacheEnabled) {
             const cached = await diskCache.get(cacheKey);
-            console.log(`[CACHE CHECK for] ${cacheKey} =>`, cached ? 'HIT' : 'MISS');
+            console.log(`[CACHE CHECK for] ${cacheKey} :: ${req.url}=>`, cached ? 'HIT' : 'MISS');
             if (cached) {
                 console.log(`[CACHE HIT] ${cacheKey}`);
                 const { headers, body } = cached;
@@ -250,7 +250,7 @@ function buildCacheKey(req) {
                     const cache_ttl = matchedRule.cache_ttl || 300;
                     try {
                         await diskCache.set(cacheKey, { headers: proxyRes.headers, body, cache_ttl }, cache_ttl);
-                        console.log(`[CACHE SET] ${ cacheKey}, size: ${body.length}`);
+                        console.log(`[CACHE SET] ${ cacheKey} :: ${req.url}, size: ${body.length}`);
                     } catch (err) {
                         console.error(`[CACHE WRITE ERROR] ${cacheKey}: ${err.message}`);
                     }
