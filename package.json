@@ -17,6 +17,7 @@
     "cacheable-response": "^2.10.4",
     "dotenv": "^17.2.2",
     "http-proxy": "^1.18.1",
+    "node-cache": "^5.1.2",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
   }

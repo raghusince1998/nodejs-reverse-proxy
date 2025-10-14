@@ -307,17 +307,17 @@ module.exports = {
                 'Host': '$host'
             }
         },
-        // 🔹 Root (SPA client)
-        {
-            location: '/',
-            target: 'file:///data1/nginx/html/rainbow-client/',
-            access_log: 'logs/proxy.asia.essilor.group/access.log',
-            response_headers: {
-                ...commonHeaders,
-                'Cache-Control': 'no-cache',
-                'X-Powered-By': 'CustomProxy'
-            }
-        }
+        // // 🔹 Root (SPA client)
+        // {
+        //     location: '/',
+        //     target: 'file:///data1/nginx/html/rainbow-client/',
+        //     access_log: 'logs/proxy.asia.essilor.group/access.log',
+        //     response_headers: {
+        //         ...commonHeaders,
+        //         'Cache-Control': 'no-cache',
+        //         'X-Powered-By': 'CustomProxy'
+        //     }
+        // }
     ],
     'app.example.com': [
         {
@@ -360,7 +360,7 @@ module.exports = {
                 'Test_set_header': 'test_set_header'
             },
             cache: true,
-            cache_ttl: 129600, // this is in seconds (36 hour)
+            cache_ttl: 300, // this is in seconds (36 hour = 129600 )
         },
         {
             location: '/',
@@ -375,7 +375,7 @@ module.exports = {
                 'Cache-Control': 'no-store'
             },
             cache: true,
-            cache_ttl: 129600, // this is in seconds (36 hour)
+            cache_ttl: 300, // this is in seconds (36 hour = 129600)
                }
     ],
     'default': [

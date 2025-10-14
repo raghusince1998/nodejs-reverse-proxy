@@ -3,7 +3,7 @@ const fsStore = require('cache-manager-fs-hash');
 const path = require('path');
 const fs = require('fs');
 
-const memoryCache = cacheManager.caching({ store: 'memory', max: 100, ttl: 60 });
+const memoryCache = cacheManager.caching({ store: 'memory', max: 200, ttl: 60 });
 
 const diskCachePath = path.resolve(__dirname, '../data/cache');
 

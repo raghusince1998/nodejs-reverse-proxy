@@ -6,7 +6,7 @@ const routes = require('./routes');
 const fs = require('fs');
 const path = require('path');
 const { createLogger } = require("./logger");
-const diskCache = require('./diskCache');
+const diskCache = require('./hybridCustomCache');
 const crypto = require('crypto');
 
 const proxy = httpProxy.createProxyServer({});
@@ -161,6 +161,7 @@ function buildCacheKey(req) {
         const cacheEnabled = cache && req.method === 'GET' && !(request_headers?.['x-cache-bypass']);
 
         if (cacheEnabled) {
+            // if (req.url.includes('/favicon.ico')) return next();
             const cached = await diskCache.get(cacheKey);
             console.log(`[CACHE CHECK for] ${cacheKey} :: ${req.url}=>`, cached ? 'HIT' : 'MISS');
             if (cached) {
