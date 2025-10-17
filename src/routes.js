@@ -182,7 +182,7 @@ module.exports = {
             target: `https://${process.env.CAMELOT_SERVER}`,
             access_log: 'logs/proxy.asia.essilor.group/camelot/access.log',
             cache: true,
-            cache_ttl: 129600, // this is in seconds (36 hour)
+            cache_ttl: 129600, // this is in seconds (36 hour = 129600)
             request_headers: {
                 ...commonHeaders,
                 'X-Cache-Bypass': 1,

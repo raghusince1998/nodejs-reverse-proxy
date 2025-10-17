@@ -104,10 +104,12 @@ function buildCacheKey(req) {
             return;
         }
 
-        const matchedRule = routeRules.find(rule => req.url.startsWith(rule.location));
+        const matchedRule = routeRules?.find(rule => req.url.startsWith(rule.location));
+
         if (!matchedRule) {
-            res.writeHead(404);
-            res.end('No matching route');
+            console.warn(`[WARN] No matching route found for ${hostname}${req.url}`);
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('404 - No matching route');
             return;
         }
 
