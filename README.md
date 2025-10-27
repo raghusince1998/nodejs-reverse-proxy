@@ -84,7 +84,7 @@ Update routes and configurations on-the-fly without downtime.
 ## ⚙️ Installation
 # Clone the repository
 ```bash
-git clone https://github.com/<your-username>/nodejs-reverse-proxy.git
+git clone https://github.com/raghusince1998/nodejs-reverse-proxy.git
 cd nodejs-reverse-proxy
 ```
 
