@@ -15,8 +15,8 @@ const HTTP_PORT = process.env.HTTP_PORT || 80;
 const HTTPS_PORT = process.env.HTTPS_PORT || 443;
 
 const options = {
-    key: fs.readFileSync(path.join(__dirname, '../ssl/proxy.asia.essilor.group-key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, '../ssl/proxy.asia.essilor.group.pem'))
+    key: fs.readFileSync(path.join(__dirname, '../ssl/proxy.asia.group-key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '../ssl/proxy.asia.group.pem'))
 };
 
 const loggers = {};
